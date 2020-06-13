@@ -7,11 +7,11 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import javax.swing.JFrame;
 
-public class MyFrame extends JFrame implements KeyListener, MouseListener, MouseMotionListener {
+public class Frame extends JFrame implements KeyListener, MouseListener, MouseMotionListener {
 	
-	private MyPanel p = new MyPanel();
+	private Panel panel = new Panel();
 	
-	public MyFrame(String title) {
+	public Frame(String title) {
 		super(title);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -23,62 +23,63 @@ public class MyFrame extends JFrame implements KeyListener, MouseListener, Mouse
 		this.addKeyListener(this);
 		this.addMouseListener(this);
 		this.addMouseMotionListener(this);
-		//this.addMouseWheelListener(this);
 		
-		add(p);				
+		add(panel);
 	}
 	
 	public void update(double deltaTime) {
-		p.update(deltaTime);
+		panel.update(deltaTime);
 	}
 	
 	public void draw() {
-		p.draw();
-	}	
+		panel.draw();
+	}
+
+	/*KeyListener interface methods*/
 	
 	public void keyPressed(KeyEvent e) {
-		p.camMove(e);
+		panel.camMove(e);
 	}
 	
 	public void keyTyped(KeyEvent e) {
-		//empty
+		//left empty on purpose
 	}
 	
 	public void keyReleased(KeyEvent e) {
-		//empty
-	}	
-	
-	//----------------------------------------------------
+		//left empty on purpose
+	}
+
+	/*MouseMotionListener interface methods*/
 	
 	public void mouseMoved(MouseEvent e) {
-		//System.out.println(e.getX());
+		//left empty on purpose
 		
 	}
 	
 	public void mouseDragged(MouseEvent e) {
-		p.camRotate(e);
+		panel.camRotate(e);
 	}
-	
-	//----------------------------------------------------
+
+	/*MouseListener interface methods*/
 	
 	public void mouseEntered(MouseEvent e) {
-		//empty
+		//left empty on purpose
 	}
 	
 	public void mouseExited(MouseEvent e) {
-		//empty
+		//left empty on purpose
 	}
 	
 	public void mousePressed(MouseEvent e) {
-		//empty
+		//left empty on purpose
 	}
 	
 	public void mouseReleased(MouseEvent e) {
-		//empty
+		//left empty on purpose
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		//empty
+		//left empty on purpose
 	}
 
 }

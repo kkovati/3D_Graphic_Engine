@@ -53,20 +53,20 @@ public class Point {
 		//d0 can be moved to constants
 		
 		//virtual distance of monitor from camera (in pixels)
-		double d0 = Constants.diplayWidth/(2*Math.tan(Math.toRadians(Constants.viewAngleHor/2)));
+		double d0 = Constants.diplayWidth/(2 * Math.tan(Math.toRadians(Constants.viewAngleHor / 2)));
 		
 		//coordinate on monitor (origo in middle)
-		double x = d0*yRel/xRel;
+		double x = d0 * yRel / xRel;
 		
 		//coordinate on monitor (origo in middle)		
-		double y = d0*zRel/xRel;
+		double y = d0 * zRel / xRel;
 		
 		//coordinate on monitor (origo at top left)
-		xDisp = -x + Constants.diplayWidth/2;
-		yDisp = -y + Constants.diplayHeight/2;
+		xDisp = -x + Constants.diplayWidth / 2;
+		yDisp = -y + Constants.diplayHeight / 2;
 		
-		if(x < Constants.diplayWidth/2 && x > -Constants.diplayWidth/2 && y < Constants.diplayHeight/2 && y > -Constants.diplayHeight/2 && xRel > 0) {
-			g.fillOval((int)(xDisp - (size/2)),(int)(yDisp - (int)(size/2)), (int)size, (int)size );
+		if(x < Constants.diplayWidth / 2 && x > -Constants.diplayWidth / 2 && y < Constants.diplayHeight / 2 && y > -Constants.diplayHeight / 2 && xRel > 0) {
+			g.fillOval((int)(xDisp - (size / 2)),(int)(yDisp - (int)(size / 2)), (int)size, (int)size );
 			visible = true;
 		} else {
 			visible = false;

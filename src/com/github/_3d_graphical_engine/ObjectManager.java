@@ -4,19 +4,19 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MyObjectManager {
+public class ObjectManager {
 	
 	private ArrayList<Cube> ca = new ArrayList<Cube>();
 	
 	private ArrayList<Point> pa = new ArrayList<Point>();
 	
-	//private Background bg = new Background();
+	private Background bg = new Background();
 	
 	//private Line ln;
 	
 	//private Floor fl = new Floor();
 	
-	public MyObjectManager() {
+	public ObjectManager() {
 
 		//ca.add(new Cube(2,0,1,1));
 		//ca.add(new Cube(4,3,3,1));
@@ -37,7 +37,7 @@ public class MyObjectManager {
 	}
 	
 	public void update(Camera cam, double deltaTime) {
-		//bg.update(cam);
+		bg.update(cam);
 		//fl.update(cam);
 		ca.forEach(cube->cube.update(cam, deltaTime));
 		pa.forEach(point->point.update(cam));	
@@ -45,7 +45,7 @@ public class MyObjectManager {
 	}
 	
 	public void draw(Graphics g) {
-		//bg.draw(g);
+		bg.draw(g);
 		//fl.draw(g);
 		ca.forEach(cube->cube.draw(g));
 		pa.forEach(point->point.draw(g));

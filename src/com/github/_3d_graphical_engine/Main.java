@@ -6,7 +6,9 @@ public class Main {
 
         testingStuff();
 
-        MyFrame f = new MyFrame("Camera");
+        Frame frame = new Frame("Camera");
+
+        //TODO
         MyFrameTest t = new MyFrameTest("Test");
 
         long refreshTimeUpdate = 35; //in ms
@@ -20,13 +22,13 @@ public class Main {
             if(System.currentTimeMillis() - startTimeUpdate >= refreshTimeUpdate) {
                 long deltaTime = System.currentTimeMillis() - startTimeUpdate;
                 startTimeUpdate = System.currentTimeMillis();
-                f.update(deltaTime * Constants.TIME_SPEED / 1000); //in sec
+                frame.update(deltaTime * Constants.TIME_SPEED / 1000); //in sec
                 t.update(deltaTime);
             }
 
             if(System.currentTimeMillis() - startTimeDraw >= refreshTimeDraw) {
                 startTimeDraw = System.currentTimeMillis();
-                f.draw();
+                frame.draw();
                 t.draw();
             }
         }

@@ -8,14 +8,14 @@ import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
 
 
-public class MyPanel extends JPanel{
+public class Panel extends JPanel{
 	
-	private MyObjectManager m = new MyObjectManager();
+	private ObjectManager manager = new ObjectManager();
 	
 	private Camera cam = new Camera(0,0,1,0,0);
 	
 	public void update(double deltaTime) {
-		m.update(cam, deltaTime);
+		manager.update(cam, deltaTime);
 	}
 	
 	public void draw() {
@@ -38,13 +38,14 @@ public class MyPanel extends JPanel{
 		g.drawLine(Constants.diplayWidth/2, 0, Constants.diplayWidth/2, Constants.diplayHeight);
 		g.drawLine(Constants.diplayWidth*3/4, 0, Constants.diplayWidth*3/4, Constants.diplayHeight);
 		g.drawLine(Constants.diplayWidth, 0, Constants.diplayWidth, Constants.diplayHeight);
-				
+
+		//diagonal grid lines
 		g.drawLine(0, 0, Constants.diplayWidth, Constants.diplayHeight);
 		g.drawLine(Constants.diplayWidth, 0, 0, Constants.diplayHeight);
 		
 		g.setColor(Color.BLACK);
 		
-		m.draw(g);
+		manager.draw(g);
 		
 		//for testing reasons only
 		cam.draw(g);

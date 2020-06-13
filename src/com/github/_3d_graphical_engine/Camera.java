@@ -4,8 +4,12 @@ import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
+/**
+ * Representation of the point of view
+ * Camera has position in space and direction of view
+ */
 public class Camera {
-	
+
 	private double x,y,z;
 	private double viewDirHor, viewDirVer;
 	
@@ -45,8 +49,11 @@ public class Camera {
 		this.y += y;
 		this.z += z;
 	}
-	
-	
+
+	/**
+	 * Moves Camera in space by updating it's positions
+	 * @param e KeyEvent of pressing cursors or WASD keys
+	 */
 	public void move(KeyEvent e) {
 		int keyCode = e.getKeyCode();
 		
@@ -66,8 +73,12 @@ public class Camera {
 			x += (Math.cos(Math.toRadians(viewDirHor-90)) * Constants.stepSize);
 			y += (Math.sin(Math.toRadians(viewDirHor-90)) * Constants.stepSize);
 		}
-	}	
-	
+	}
+
+	/**
+	 * Change the Camera's direction of view
+	 * @param e MouseEvent of dragging the view in the frame
+	 */
 	public void rotate(MouseEvent e) {
 		if(Math.abs(camXRotate - e.getX()) < 10) {
 			viewDirHor += (e.getX() - camXRotate) * 0.1;
@@ -78,12 +89,14 @@ public class Camera {
 			viewDirVer += (e.getY() - camYRotate) * 0.1;
 		}
 		camYRotate = e.getY();
-		
+
+		//set horizontal view direction between 0 and 360 degrees
 		if(viewDirHor > 360)
 			viewDirHor -= 360;
 		if(viewDirHor < 0)
 			viewDirHor += 360;
-		
+
+		//forbid vertical tilting of the view direction more than zenith or nadir
 		if(viewDirVer > 90)
 			viewDirVer = 90;
 		if(viewDirVer < -90)
