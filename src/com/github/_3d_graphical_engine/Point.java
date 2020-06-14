@@ -4,7 +4,6 @@ import java.awt.Graphics;
 
 /**
  * Represents a single point in space
- *
  */
 public class Point {
 
@@ -12,7 +11,7 @@ public class Point {
 	private double x0,y0,z0;
 	//relative coordinates to camera's position and view direction
 	private double xRel,yRel,zRel;
-	//visibility flag on display
+	//visibility on display
 	private boolean visible;
 
 	//coordinates on display screen
@@ -37,7 +36,8 @@ public class Point {
 		xRel = x0 - cam.x();
 		yRel = y0 - cam.y();
 		zRel = z0 - cam.z();
-		
+
+		//TODO
 		//these calculations can be easier, deg->rad has to be deleted
 		//alphas can be dismissed
 		
@@ -59,14 +59,19 @@ public class Point {
 		zRel = r * Math.sin(Math.toRadians(alpha1));
 		xRel = (xRel < 0 ? -1 : 1) * r * Math.cos(Math.toRadians(alpha1));
 	}
-	
+
+	/**
+	 * Calculates screen coordinates and displays points on screen
+	 * @param g Graphics from Panel
+	 */
 	public void display(Graphics g) {
-		
-		//these have to move to update()
+
+		//TODO
+		//these calculations have to move to update()
 		//d0 can be moved to constants
 		
 		//virtual distance of monitor from camera (in pixels)
-		double d0 = Settings.diplayWidth/(2 * Math.tan(Math.toRadians(Settings.viewAngleHor / 2)));
+		double d0 = Settings.diplayWidth / (2 * Math.tan(Math.toRadians(Settings.viewAngleHor / 2)));
 		
 		//coordinate on monitor (origo in middle)
 		double x = d0 * yRel / xRel;
@@ -84,12 +89,7 @@ public class Point {
 		} else {
 			visible = false;
 		}
-		
-		//test:
-		Test.xRel = xRel;
-		Test.yRel = yRel;
-		Test.zRel = zRel;
-		
+
 	}
 	
 	public double xDisp() {

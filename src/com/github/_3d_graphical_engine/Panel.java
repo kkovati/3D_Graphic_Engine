@@ -2,11 +2,13 @@ package com.github._3d_graphical_engine;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-
 import javax.swing.JPanel;
 
+
+/**
+ * The single component inside Frame,
+ * provides Graphics object for the controller and models to
+ */
 public class Panel extends JPanel{
 	
 	public void display() {
@@ -35,8 +37,7 @@ public class Panel extends JPanel{
 		g.drawLine(Settings.diplayWidth, 0, 0, Settings.diplayHeight);
 		
 		g.setColor(Color.BLACK);
-		
-		//System.out.println("" + cam.x() + ", " + cam.y()+ ", " + cam.z() + ", " + cam.viewDirHor() + ", " + cam.viewDirVer());
+
 	}
 	
 }

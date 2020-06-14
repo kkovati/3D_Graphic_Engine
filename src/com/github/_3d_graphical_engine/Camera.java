@@ -19,6 +19,10 @@ public class Camera {
 	//auxiliary variable for proper camera rotation display
 	private int camXRotate;
 	private int camYRotate;
+
+	//variables for displaying camera movement
+	private String lastMove = "";
+	private int dispCountdown;
 		
 	public Camera(double x, double y, double z, double viewDirHor, double viewDirVer) {
 		this.x = x;
@@ -64,19 +68,24 @@ public class Camera {
 		if(keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_W) {
 			x += (Math.cos(Math.toRadians(viewDirHor)) * Settings.stepSize);
 			y += (Math.sin(Math.toRadians(viewDirHor)) * Settings.stepSize);
+			lastMove = "UP";
 		}
 		if(keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_S) {
 			x -= (Math.cos(Math.toRadians(viewDirHor)) * Settings.stepSize);
 			y -= (Math.sin(Math.toRadians(viewDirHor)) * Settings.stepSize);
+			lastMove = "DOWN";
 		}
 		if(keyCode == KeyEvent.VK_LEFT || keyCode == KeyEvent.VK_A) {
 			x += (Math.cos(Math.toRadians(viewDirHor+90)) * Settings.stepSize);
 			y += (Math.sin(Math.toRadians(viewDirHor+90)) * Settings.stepSize);
+			lastMove = "LEFT";
 		}
 		if(keyCode == KeyEvent.VK_RIGHT || keyCode == KeyEvent.VK_D) {
 			x += (Math.cos(Math.toRadians(viewDirHor-90)) * Settings.stepSize);
 			y += (Math.sin(Math.toRadians(viewDirHor-90)) * Settings.stepSize);
+			lastMove = "RIGHT";
 		}
+		dispCountdown = 8;
 	}
 
 	/**
@@ -108,11 +117,39 @@ public class Camera {
 		if(viewDirVer < -90)
 			viewDirVer = -90;
 	}
-	
-	//for testing reasons only
+
+	/**
+	 * Displaying camera view angles on screen,
+	 * and arrows which represent camera movement
+	 * @param g Graphics
+	 */
 	public void display(Graphics g) {
 		g.setFont(new Font("default", Font.BOLD, 16));
 		g.drawString("Hor: " + (int)viewDirHor + "deg", 50, 50);
 		g.drawString("Ver: " + (int)viewDirVer + "deg", 50, 70);
+
+		if (dispCountdown <= 0) {
+			lastMove = "";
+			return;
+		}
+		dispCountdown--;
+		g.setFont(new Font("default", Font.BOLD, 32));
+		switch (lastMove) {
+			case "UP":
+				g.drawString("▲", Settings.diplayWidth / 2, 50);
+				break;
+			case "DOWN":
+				g.drawString("▼", Settings.diplayWidth / 2, Settings.diplayHeight - 50);
+				break;
+			case "LEFT":
+				g.drawString("◄", 50, Settings.diplayHeight / 2);
+				break;
+			case "RIGHT":
+				g.drawString("►", Settings.diplayWidth - 50, Settings.diplayHeight / 2);
+				break;
+			default:
+		}
+
 	}
+
 }

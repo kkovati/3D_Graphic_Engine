@@ -9,6 +9,10 @@ import java.awt.event.MouseMotionListener;
 import javax.swing.JFrame;
 
 
+/**
+ * Main window of the application, a container for the Panel
+ * Handles all user activity through listeners
+ */
 public class Frame extends JFrame implements KeyListener, MouseListener, MouseMotionListener {
 	
 	private Panel panel = new Panel();

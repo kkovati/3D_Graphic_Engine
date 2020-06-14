@@ -4,18 +4,22 @@ import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
+/**
+ * The main controller class
+ * Handles and connects the models and views
+ */
 public class Engine {
 
     Frame frame = new Frame(this);
 
+
     private ObjectManager manager = new ObjectManager();
 
+    //Camera models the point of view
     private Camera cam = new Camera(0,0,1,0,0);
 
+    //Graphics form Panel
     private Graphics graphics;
-
-    //TODO
-    MyFrameTest t = new MyFrameTest("Test");
 
     public Engine()
     {
@@ -62,14 +66,12 @@ public class Engine {
                 long deltaTime = System.currentTimeMillis() - startTimeUpdate;
                 startTimeUpdate = System.currentTimeMillis();
                 this.update(deltaTime * Settings.TIME_SPEED / 1000); //in sec
-                t.update(deltaTime);
             }
 
             if(System.currentTimeMillis() - startTimeDisplay >= refreshTimeDisplay) {
                 startTimeDisplay = System.currentTimeMillis();
                 frame.display();
                 this.display();
-                t.draw();
             }
         }
     }

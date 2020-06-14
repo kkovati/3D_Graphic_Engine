@@ -48,7 +48,8 @@ public class Cube implements Polyhedron {
 	public void display(Graphics g) {
 		g.setColor(Color.BLACK);
 		points.forEach(point->point.display(g));
-		//line draw must be after point draw
+		//TODO
+		//line display must be after point display
 		//but if xDisp would calculated in Point`s update
 		//the sequence would be irrelevant
 		lines.forEach(line->line.display(g));

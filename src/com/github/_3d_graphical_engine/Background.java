@@ -5,23 +5,29 @@ import java.awt.Graphics;
 
 /**
  * Displays background based on camera's vertical view angle
+ * Makes user orientation easier
  */
 public class Background {
 	
 	double invViewDir;
 	
 	public Background() {
-		
+		//left empty on purpose
 	}
-	
-	public void update(Camera cam) {
-		
-		invViewDir = -cam.viewDirVer();
-		
-	}
-	
-	public void display(Graphics g) {
 
+	/**
+	 * Saves camera vertical view angle
+	 * @param cam Camera
+	 */
+	public void update(Camera cam) {
+		invViewDir = -cam.viewDirVer();
+	}
+
+	/**
+	 * Displays background
+	 * @param g Graphics of Panel
+	 */
+	public void display(Graphics g) {
 		//Camera virtual distance from the screen
 		double dist = Settings.diplayWidth / (2 * Math.tan(Math.toRadians(Settings.viewAngleHor / 2)));
 

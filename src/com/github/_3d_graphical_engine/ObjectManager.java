@@ -2,14 +2,19 @@ package com.github._3d_graphical_engine;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
-import java.util.Random;
 
+
+/**
+ * Handles, updates and displays all the displayable objects,
+ */
 public class ObjectManager {
 
+	//list of single points
 	private ArrayList<Point> points = new ArrayList<>();
 
+	//list of all type of complex objects made of points and lines
 	private ArrayList<Polyhedron> polyhedrons = new ArrayList<>();
-	
+
 	private Background background = new Background();
 	
 	//private Line ln;
