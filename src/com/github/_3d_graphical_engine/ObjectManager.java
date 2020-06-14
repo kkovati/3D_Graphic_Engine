@@ -18,22 +18,16 @@ public class ObjectManager {
 	
 	public ObjectManager() {
 
-		//ca.add(new Cube(2,0,1,1));
-		//ca.add(new Cube(4,3,3,1));
-		
 		//pa.add(new Point(1000,0,0));
 		//pa.add(new Point(1000,0,-1));
-		
-		//points.add(new Point(2,2,1)); //********
-		//pa.add(new Point(-2,2,1));
 		
 		//ln = new Line(pa.get(0),pa.get(1));
 		
 		/*Gauss*/
-		Random r = new Random();
+		/*Random r = new Random();
 		for(int i = 0; i<5; i++) {
 			polyhedrons.add(new Cube(r.nextGaussian(), r.nextGaussian(), r.nextGaussian(), 1));
-		}
+		}*/
 	}
 
 	public void add(Point p) {
@@ -41,7 +35,7 @@ public class ObjectManager {
 	}
 
 	public void add(Polyhedron p) {
-
+		polyhedrons.add(p);
 	}
 	
 	public void update(Camera cam, double deltaTime) {

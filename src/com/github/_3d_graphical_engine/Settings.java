@@ -8,6 +8,7 @@ public class Settings {
 
 	//maximum frame per second refresh rate
 	public static int MAX_FPS = 25;
+	//constant time factor for kinematics
 	public static double TIME_SPEED = 0.7;
 	
 	//angle of view  (same for both vertically and horizontally)
