@@ -32,7 +32,7 @@ public class Frame extends JFrame implements KeyListener, MouseListener, MouseMo
 		panel.update(deltaTime);
 	}
 	
-	public void draw() {
+	public void display() {
 		panel.display();
 	}
 

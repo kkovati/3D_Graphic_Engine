@@ -44,7 +44,7 @@ public class ObjectManager {
 		
 	}
 	
-	public void display(Graphics g) {
+	public void draw(Graphics g) {
 		bg.display(g);
 		//fl.draw(g);
 		ca.forEach(cube->cube.draw(g));

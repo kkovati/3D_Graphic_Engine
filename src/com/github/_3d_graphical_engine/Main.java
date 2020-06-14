@@ -6,32 +6,9 @@ public class Main {
 
         testingStuff();
 
-        Frame frame = new Frame("Camera");
+        Engine engine = new Engine();
 
-        //TODO
-        MyFrameTest t = new MyFrameTest("Test");
-
-        long refreshTimeUpdate = 35; //in ms
-        long startTimeUpdate = System.currentTimeMillis();
-
-        long refreshTimeDraw = 1000 / Settings.MAX_FPS;
-        long startTimeDraw = System.currentTimeMillis();
-
-        while(true) {
-
-            if(System.currentTimeMillis() - startTimeUpdate >= refreshTimeUpdate) {
-                long deltaTime = System.currentTimeMillis() - startTimeUpdate;
-                startTimeUpdate = System.currentTimeMillis();
-                frame.update(deltaTime * Settings.TIME_SPEED / 1000); //in sec
-                t.update(deltaTime);
-            }
-
-            if(System.currentTimeMillis() - startTimeDraw >= refreshTimeDraw) {
-                startTimeDraw = System.currentTimeMillis();
-                frame.draw();
-                t.draw();
-            }
-        }
+        engine.run();
     }
 
     public static void testingStuff() {

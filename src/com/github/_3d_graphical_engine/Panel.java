@@ -45,7 +45,7 @@ public class Panel extends JPanel{
 		
 		g.setColor(Color.BLACK);
 		
-		manager.display(g);
+		manager.draw(g);
 		
 		//for testing reasons only
 		cam.display(g);
