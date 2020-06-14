@@ -7,16 +7,7 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JPanel;
 
-
 public class Panel extends JPanel{
-	
-	private ObjectManager manager = new ObjectManager();
-	
-	private Camera cam = new Camera(0,0,1,0,0);
-	
-	public void update(double deltaTime) {
-		manager.update(cam, deltaTime);
-	}
 	
 	public void display() {
 		Graphics g = getGraphics();
@@ -45,21 +36,7 @@ public class Panel extends JPanel{
 		
 		g.setColor(Color.BLACK);
 		
-		manager.draw(g);
-		
-		//for testing reasons only
-		cam.display(g);
-		
-		
 		//System.out.println("" + cam.x() + ", " + cam.y()+ ", " + cam.z() + ", " + cam.viewDirHor() + ", " + cam.viewDirVer());
-	}	
-	
-	public void camMove(KeyEvent e) {
-		cam.move(e);
-	}
-	
-	public void camRotate(MouseEvent e) {
-		cam.rotate(e);
 	}
 	
 }

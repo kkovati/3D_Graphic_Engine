@@ -1,5 +1,6 @@
 package com.github._3d_graphical_engine;
 
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -10,9 +11,13 @@ import javax.swing.JFrame;
 public class Frame extends JFrame implements KeyListener, MouseListener, MouseMotionListener {
 	
 	private Panel panel = new Panel();
+
+	private Engine engine;
 	
-	public Frame(String title) {
-		super(title);
+	public Frame(Engine engine) {
+		super("Camera");
+
+		this.engine = engine;
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//size of app frame is wider than the actual display
@@ -27,11 +32,11 @@ public class Frame extends JFrame implements KeyListener, MouseListener, MouseMo
 		
 		add(panel);
 	}
-	
-	public void update(double deltaTime) {
-		panel.update(deltaTime);
+
+	public Graphics getPanelGraphics() {
+		return panel.getGraphics();
 	}
-	
+
 	public void display() {
 		panel.display();
 	}
@@ -39,7 +44,7 @@ public class Frame extends JFrame implements KeyListener, MouseListener, MouseMo
 	/*KeyListener interface methods*/
 	
 	public void keyPressed(KeyEvent e) {
-		panel.camMove(e);
+		engine.camMove(e);
 	}
 	
 	public void keyTyped(KeyEvent e) {
@@ -58,7 +63,7 @@ public class Frame extends JFrame implements KeyListener, MouseListener, MouseMo
 	}
 	
 	public void mouseDragged(MouseEvent e) {
-		panel.camRotate(e);
+		engine.camRotate(e);
 	}
 
 	/*MouseListener interface methods*/
