@@ -8,6 +8,8 @@ public class Main {
 
         Engine engine = new Engine();
 
+        engine.add(new Point(2,2,1));
+
         engine.run();
     }
 

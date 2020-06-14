@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
-public class Cube {
+public class Cube implements Polyhedron {
 	
 	ArrayList<Point> pa = new ArrayList<Point>();
 	ArrayList<Line> la = new ArrayList<Line>();
@@ -40,7 +40,7 @@ public class Cube {
 		pa.forEach(point->point.update(cam));
 	}
 	
-	public void draw(Graphics g) {
+	public void display(Graphics g) {
 		g.setColor(Color.BLACK);
 		pa.forEach(point->point.display(g));
 		//line draw must be after point draw

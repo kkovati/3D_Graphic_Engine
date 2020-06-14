@@ -11,7 +11,6 @@ public class Floor {
 	
 	public Floor() {
 		
-		
 		for(int i = -50; i<51; i++) {
 			Point temp1 = new Point(i,-50, -50);
 			Point temp2 = new Point(i,50, -50);

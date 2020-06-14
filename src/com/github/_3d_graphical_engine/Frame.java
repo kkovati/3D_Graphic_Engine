@@ -1,12 +1,13 @@
 package com.github._3d_graphical_engine;
 
-import java.awt.*;
+import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import javax.swing.JFrame;
+
 
 public class Frame extends JFrame implements KeyListener, MouseListener, MouseMotionListener {
 	
@@ -15,7 +16,7 @@ public class Frame extends JFrame implements KeyListener, MouseListener, MouseMo
 	private Engine engine;
 	
 	public Frame(Engine engine) {
-		super("Camera");
+		super("3D Graphical Engine");
 
 		this.engine = engine;
 		
@@ -59,7 +60,6 @@ public class Frame extends JFrame implements KeyListener, MouseListener, MouseMo
 	
 	public void mouseMoved(MouseEvent e) {
 		//left empty on purpose
-		
 	}
 	
 	public void mouseDragged(MouseEvent e) {

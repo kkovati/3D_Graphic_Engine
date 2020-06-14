@@ -22,6 +22,14 @@ public class Engine {
         graphics = frame.getPanelGraphics();
     }
 
+    public void add(Point p) {
+        manager.add(p);
+    }
+
+    public void add(Polyhedron p) {
+        manager.add(p);
+    }
+
     public void update(double deltaTime) {
         manager.update(cam, deltaTime);
     }
@@ -45,8 +53,8 @@ public class Engine {
         long refreshTimeUpdate = 35; //in ms
         long startTimeUpdate = System.currentTimeMillis();
 
-        long refreshTimeDraw = 1000 / Settings.MAX_FPS;
-        long startTimeDraw = System.currentTimeMillis();
+        long refreshTimeDisplay = 1000 / Settings.MAX_FPS;
+        long startTimeDisplay = System.currentTimeMillis();
 
         while(true) {
 
@@ -57,8 +65,8 @@ public class Engine {
                 t.update(deltaTime);
             }
 
-            if(System.currentTimeMillis() - startTimeDraw >= refreshTimeDraw) {
-                startTimeDraw = System.currentTimeMillis();
+            if(System.currentTimeMillis() - startTimeDisplay >= refreshTimeDisplay) {
+                startTimeDisplay = System.currentTimeMillis();
                 frame.display();
                 this.display();
                 t.draw();
