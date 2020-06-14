@@ -14,7 +14,7 @@ public class Main {
         long refreshTimeUpdate = 35; //in ms
         long startTimeUpdate = System.currentTimeMillis();
 
-        long refreshTimeDraw = 1000 / Constants.MAX_FPS;
+        long refreshTimeDraw = 1000 / Settings.MAX_FPS;
         long startTimeDraw = System.currentTimeMillis();
 
         while(true) {
@@ -22,7 +22,7 @@ public class Main {
             if(System.currentTimeMillis() - startTimeUpdate >= refreshTimeUpdate) {
                 long deltaTime = System.currentTimeMillis() - startTimeUpdate;
                 startTimeUpdate = System.currentTimeMillis();
-                frame.update(deltaTime * Constants.TIME_SPEED / 1000); //in sec
+                frame.update(deltaTime * Settings.TIME_SPEED / 1000); //in sec
                 t.update(deltaTime);
             }
 

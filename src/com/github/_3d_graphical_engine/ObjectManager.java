@@ -44,11 +44,11 @@ public class ObjectManager {
 		
 	}
 	
-	public void draw(Graphics g) {
-		bg.draw(g);
+	public void display(Graphics g) {
+		bg.display(g);
 		//fl.draw(g);
 		ca.forEach(cube->cube.draw(g));
-		pa.forEach(point->point.draw(g));
+		pa.forEach(point->point.display(g));
 		//ln.draw(g);
 	}
 }

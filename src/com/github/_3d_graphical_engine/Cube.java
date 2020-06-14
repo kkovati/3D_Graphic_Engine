@@ -42,11 +42,11 @@ public class Cube {
 	
 	public void draw(Graphics g) {
 		g.setColor(Color.BLACK);
-		pa.forEach(point->point.draw(g));
+		pa.forEach(point->point.display(g));
 		//line draw must be after point draw
 		//but if xDisp would calculated in Point`s update
 		//the sequence would be irrelevant
-		la.forEach(line->line.draw(g));
+		la.forEach(line->line.display(g));
 		
 		g.setColor(Color.BLACK);
 		@SuppressWarnings("unused")

@@ -7,14 +7,14 @@ import java.awt.Graphics;
  */
 public class Line {
 	
-	Point a, b;
+	Point a, b; //two points span the line
 	
 	public Line(Point a, Point b) {
 		this.a = a;
 		this.b = b;
 	}
 	
-	public void draw(Graphics g) {
+	public void display(Graphics g) {
 		if(a.IsVisible() || b.IsVisible())
 			g.drawLine((int)a.xDisp(), (int)a.yDisp(), (int)b.xDisp(), (int)b.yDisp());
 	}

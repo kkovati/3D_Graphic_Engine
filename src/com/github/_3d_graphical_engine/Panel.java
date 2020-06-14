@@ -18,7 +18,7 @@ public class Panel extends JPanel{
 		manager.update(cam, deltaTime);
 	}
 	
-	public void draw() {
+	public void display() {
 		Graphics g = getGraphics();
 		super.paintComponent(g);
 		this.setBackground(Color.WHITE);
@@ -26,29 +26,29 @@ public class Panel extends JPanel{
 		g.setColor(Color.RED);
 
 		//horizontal grid lines
-		g.drawLine(0, 0, Constants.diplayWidth, 0);
-		g.drawLine(0, Constants.diplayHeight/4, Constants.diplayWidth, Constants.diplayHeight/4);
-		g.drawLine(0, Constants.diplayHeight/2, Constants.diplayWidth, Constants.diplayHeight/2);
-		g.drawLine(0, Constants.diplayHeight*3/4, Constants.diplayWidth, Constants.diplayHeight*3/4);
-		g.drawLine(0, Constants.diplayHeight, Constants.diplayWidth, Constants.diplayHeight);
+		g.drawLine(0, 0, Settings.diplayWidth, 0);
+		g.drawLine(0, Settings.diplayHeight / 4, Settings.diplayWidth, Settings.diplayHeight / 4);
+		g.drawLine(0, Settings.diplayHeight / 2, Settings.diplayWidth, Settings.diplayHeight / 2);
+		g.drawLine(0, Settings.diplayHeight * 3 / 4, Settings.diplayWidth, Settings.diplayHeight * 3 / 4);
+		g.drawLine(0, Settings.diplayHeight, Settings.diplayWidth, Settings.diplayHeight);
 		
 		//vertical grid lines
-		g.drawLine(0, 0, 0, Constants.diplayHeight);
-		g.drawLine(Constants.diplayWidth/4, 0, Constants.diplayWidth/4, Constants.diplayHeight);
-		g.drawLine(Constants.diplayWidth/2, 0, Constants.diplayWidth/2, Constants.diplayHeight);
-		g.drawLine(Constants.diplayWidth*3/4, 0, Constants.diplayWidth*3/4, Constants.diplayHeight);
-		g.drawLine(Constants.diplayWidth, 0, Constants.diplayWidth, Constants.diplayHeight);
+		g.drawLine(0, 0, 0, Settings.diplayHeight);
+		g.drawLine(Settings.diplayWidth / 4, 0, Settings.diplayWidth / 4, Settings.diplayHeight);
+		g.drawLine(Settings.diplayWidth / 2, 0, Settings.diplayWidth / 2, Settings.diplayHeight);
+		g.drawLine(Settings.diplayWidth * 3 / 4, 0, Settings.diplayWidth * 3 / 4, Settings.diplayHeight);
+		g.drawLine(Settings.diplayWidth, 0, Settings.diplayWidth, Settings.diplayHeight);
 
 		//diagonal grid lines
-		g.drawLine(0, 0, Constants.diplayWidth, Constants.diplayHeight);
-		g.drawLine(Constants.diplayWidth, 0, 0, Constants.diplayHeight);
+		g.drawLine(0, 0, Settings.diplayWidth, Settings.diplayHeight);
+		g.drawLine(Settings.diplayWidth, 0, 0, Settings.diplayHeight);
 		
 		g.setColor(Color.BLACK);
 		
-		manager.draw(g);
+		manager.display(g);
 		
 		//for testing reasons only
-		cam.draw(g);
+		cam.display(g);
 		
 		
 		//System.out.println("" + cam.x() + ", " + cam.y()+ ", " + cam.z() + ", " + cam.viewDirHor() + ", " + cam.viewDirVer());

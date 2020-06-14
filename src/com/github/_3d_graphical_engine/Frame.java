@@ -16,7 +16,7 @@ public class Frame extends JFrame implements KeyListener, MouseListener, MouseMo
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//size of app frame is wider than the actual display
-		setSize(Constants.diplayWidth + 10, Constants.diplayHeight + 32);
+		setSize(Settings.diplayWidth + 10, Settings.diplayHeight + 32);
 		setLocationRelativeTo(null); //set frame in middle of monitor
 		setVisible(true);
 		setResizable(false);
@@ -33,7 +33,7 @@ public class Frame extends JFrame implements KeyListener, MouseListener, MouseMo
 	}
 	
 	public void draw() {
-		panel.draw();
+		panel.display();
 	}
 
 	/*KeyListener interface methods*/

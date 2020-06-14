@@ -1,6 +1,7 @@
 package com.github._3d_graphical_engine;;
 
 import java.awt.Graphics;
+import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
@@ -10,9 +11,12 @@ import java.awt.event.MouseEvent;
  */
 public class Camera {
 
+	//position coordinates in space
 	private double x,y,z;
+	//view direction horizontal and vertical angles
 	private double viewDirHor, viewDirVer;
-	
+
+	//auxiliary variable for proper camera rotation display
 	private int camXRotate;
 	private int camYRotate;
 		
@@ -58,20 +62,20 @@ public class Camera {
 		int keyCode = e.getKeyCode();
 		
 		if(keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_W) {
-			x += (Math.cos(Math.toRadians(viewDirHor)) * Constants.stepSize);
-			y += (Math.sin(Math.toRadians(viewDirHor)) * Constants.stepSize);
+			x += (Math.cos(Math.toRadians(viewDirHor)) * Settings.stepSize);
+			y += (Math.sin(Math.toRadians(viewDirHor)) * Settings.stepSize);
 		}
 		if(keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_S) {
-			x -= (Math.cos(Math.toRadians(viewDirHor)) * Constants.stepSize);
-			y -= (Math.sin(Math.toRadians(viewDirHor)) * Constants.stepSize);
+			x -= (Math.cos(Math.toRadians(viewDirHor)) * Settings.stepSize);
+			y -= (Math.sin(Math.toRadians(viewDirHor)) * Settings.stepSize);
 		}
 		if(keyCode == KeyEvent.VK_LEFT || keyCode == KeyEvent.VK_A) {
-			x += (Math.cos(Math.toRadians(viewDirHor+90)) * Constants.stepSize);
-			y += (Math.sin(Math.toRadians(viewDirHor+90)) * Constants.stepSize);
+			x += (Math.cos(Math.toRadians(viewDirHor+90)) * Settings.stepSize);
+			y += (Math.sin(Math.toRadians(viewDirHor+90)) * Settings.stepSize);
 		}
 		if(keyCode == KeyEvent.VK_RIGHT || keyCode == KeyEvent.VK_D) {
-			x += (Math.cos(Math.toRadians(viewDirHor-90)) * Constants.stepSize);
-			y += (Math.sin(Math.toRadians(viewDirHor-90)) * Constants.stepSize);
+			x += (Math.cos(Math.toRadians(viewDirHor-90)) * Settings.stepSize);
+			y += (Math.sin(Math.toRadians(viewDirHor-90)) * Settings.stepSize);
 		}
 	}
 
@@ -80,11 +84,13 @@ public class Camera {
 	 * @param e MouseEvent of dragging the view in the frame
 	 */
 	public void rotate(MouseEvent e) {
+		//calculate horizontal rotation
 		if(Math.abs(camXRotate - e.getX()) < 10) {
 			viewDirHor += (e.getX() - camXRotate) * 0.1;
 		}
 		camXRotate = e.getX();
-		
+
+		//calculate vertical rotation
 		if(Math.abs(camYRotate - e.getY()) < 10) {
 			viewDirVer += (e.getY() - camYRotate) * 0.1;
 		}
@@ -104,7 +110,8 @@ public class Camera {
 	}
 	
 	//for testing reasons only
-	public void draw(Graphics g) {
+	public void display(Graphics g) {
+		g.setFont(new Font("default", Font.BOLD, 16));
 		g.drawString("Hor: " + (int)viewDirHor + "deg", 50, 50);
 		g.drawString("Ver: " + (int)viewDirVer + "deg", 50, 70);
 	}

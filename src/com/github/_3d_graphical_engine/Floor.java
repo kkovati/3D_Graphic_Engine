@@ -33,7 +33,7 @@ public class Floor {
 	
 	public void draw(Graphics g) {
 		g.setColor(Color.BLACK);
-		pa.forEach(point->point.draw(g));
-		la.forEach(line->line.draw(g));
+		pa.forEach(point->point.display(g));
+		la.forEach(line->line.display(g));
 	}
 }

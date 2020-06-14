@@ -29,8 +29,8 @@ public class MyPanelTest extends JPanel {
 		g.drawLine(Test.Disp, 0, Test.Disp, Test.Disp);
 		
 		//lines of angle of view:
-		g.drawLine(Test.Disp/2, Test.Disp/2, 0, (int)(Test.Disp/2 - Math.tan(Math.toRadians(Constants.viewAngleHor/2)) * (Test.Disp / 2)));
-		g.drawLine(Test.Disp/2, Test.Disp/2, 0, (int)(Test.Disp/2 + Math.tan(Math.toRadians(Constants.viewAngleHor/2)) * (Test.Disp / 2)));
+		g.drawLine(Test.Disp/2, Test.Disp/2, 0, (int)(Test.Disp/2 - Math.tan(Math.toRadians(Settings.viewAngleHor/2)) * (Test.Disp / 2)));
+		g.drawLine(Test.Disp/2, Test.Disp/2, 0, (int)(Test.Disp/2 + Math.tan(Math.toRadians(Settings.viewAngleHor/2)) * (Test.Disp / 2)));
 		
 		
 		g.setColor(Color.BLACK);
