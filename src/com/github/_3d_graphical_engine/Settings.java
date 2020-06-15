@@ -14,9 +14,9 @@ public class Settings {
 
 	/*Display settings and calculations*/
 
-	//display screen size in pixels
-	public static final int diplayWidth = 800;
-	public static final int diplayHeight = 800;
+	//display screen size in pixels (must be same)
+	public static final int diplayWidth = 1000;
+	public static final int diplayHeight = 1000;
 	
 	//angle of view in degrees (same for both vertically and horizontally)
 	public static final int viewAngleHor = 60;

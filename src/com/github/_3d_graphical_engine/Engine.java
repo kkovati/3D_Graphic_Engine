@@ -76,7 +76,7 @@ public class Engine {
 
             if(System.currentTimeMillis() - startTimeDisplay >= refreshTimeDisplay) {
                 startTimeDisplay = System.currentTimeMillis();
-                frame.display();
+                //frame.display(); //display grid
                 this.display();
             }
         }
