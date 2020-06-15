@@ -28,11 +28,8 @@ public class Background {
 	 * @param g Graphics of Panel
 	 */
 	public void display(Graphics g) {
-		//Camera virtual distance from the screen
-		double dist = Settings.diplayWidth / (2 * Math.tan(Math.toRadians(Settings.viewAngleHor / 2)));
-
 		//y coordinate of horizon on screen
-		double y =  dist * Math.tan(Math.toRadians(invViewDir));
+		double y =  Settings.screenDist * Math.tan(Math.toRadians(invViewDir));
 		y = -y + Settings.diplayHeight / 2;
 
 		//display background above horizon

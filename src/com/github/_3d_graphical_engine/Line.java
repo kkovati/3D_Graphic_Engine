@@ -15,7 +15,7 @@ public class Line {
 	}
 	
 	public void display(Graphics g) {
-		if(a.IsVisible() || b.IsVisible())
+		if(a.isVisible() || b.isVisible())
 			g.drawLine((int)a.xDisp(), (int)a.yDisp(), (int)b.xDisp(), (int)b.yDisp());
 	}
 }

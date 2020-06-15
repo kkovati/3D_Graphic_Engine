@@ -3,6 +3,7 @@ package com.github._3d_graphical_engine;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+import java.util.Set;
 
 /**
  * The main controller class
@@ -54,7 +55,7 @@ public class Engine {
     }
 
     public void run() {
-        long refreshTimeUpdate = 35; //in ms
+        long refreshTimeUpdate = Settings.UPDATE_TIME;
         long startTimeUpdate = System.currentTimeMillis();
 
         long refreshTimeDisplay = 1000 / Settings.MAX_FPS;

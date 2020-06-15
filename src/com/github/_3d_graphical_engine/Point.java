@@ -18,7 +18,7 @@ public class Point {
 	private double xDisp, yDisp;
 
 	//display size
-	private double size = 10;
+	private double size = 2;
 	
 	public Point(double x0, double y0, double z0) {
 		this.x0 = x0;
@@ -65,24 +65,18 @@ public class Point {
 	 * @param g Graphics from Panel
 	 */
 	public void display(Graphics g) {
-
-		//TODO
-		//these calculations have to move to update()
-		//d0 can be moved to constants
 		
-		//virtual distance of monitor from camera (in pixels)
-		double d0 = Settings.diplayWidth / (2 * Math.tan(Math.toRadians(Settings.viewAngleHor / 2)));
+		//x coordinate on screen (origo in middle)
+		double x = Settings.screenDist * yRel / xRel;
 		
-		//coordinate on monitor (origo in middle)
-		double x = d0 * yRel / xRel;
+		//y coordinate on screen (origo in middle)
+		double y = Settings.screenDist * zRel / xRel;
 		
-		//coordinate on monitor (origo in middle)		
-		double y = d0 * zRel / xRel;
-		
-		//coordinate on monitor (origo at top left)
+		//x and y coordinates on screen (origo at top left)
 		xDisp = -x + Settings.diplayWidth / 2;
 		yDisp = -y + Settings.diplayHeight / 2;
-		
+
+		//visible field set according to if point is out of screen visibility
 		if(x < Settings.diplayWidth / 2 && x > -Settings.diplayWidth / 2 && y < Settings.diplayHeight / 2 && y > -Settings.diplayHeight / 2 && xRel > 0) {
 			g.fillOval((int)(xDisp - (size / 2)),(int)(yDisp - (int)(size / 2)), (int)size, (int)size );
 			visible = true;
@@ -100,7 +94,7 @@ public class Point {
 		return yDisp;
 	}
 	
-	public boolean IsVisible() {
+	public boolean isVisible() {
 		return visible;
 	}
 	

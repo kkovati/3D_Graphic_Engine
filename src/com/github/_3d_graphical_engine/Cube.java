@@ -11,7 +11,12 @@ public class Cube implements Polyhedron {
 	
 	ArrayList<Point> points = new ArrayList<>();
 	ArrayList<Line> lines = new ArrayList<>();
-	
+
+	/**
+	 * Creates all the vertices and edges of cube
+	 * @param x0, y0, z0 coordinates of cube center
+	 * @param edgeLength length of cube edge
+	 */
 	public Cube(double x0, double y0, double z0, double edgeLength) {
 
 		double d = edgeLength / 2;
@@ -40,7 +45,12 @@ public class Cube implements Polyhedron {
 		lines.add(new Line(points.get(5), points.get(7)));
 		lines.add(new Line(points.get(6), points.get(7)));
 	}
-	
+
+	/**
+	 * Updates all cube vertices relative position to camera's view direction
+	 * @param cam Camera object
+	 * @param deltaTime for kinematics
+	 */
 	public void update(Camera cam, double deltaTime) {
 		points.forEach(point->point.update(cam));
 	}

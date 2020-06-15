@@ -2,19 +2,29 @@ package com.github._3d_graphical_engine;
 
 public class Settings {
 
-	//display screen size in pixels
-	public static int diplayWidth = 800;
-	public static int diplayHeight = 800;
+	/*Time settings*/
+
+	//time period of objects' coordinate calculations in ms
+	public static final int UPDATE_TIME = 35;
 
 	//maximum frame per second refresh rate
-	public static int MAX_FPS = 25;
+	public static final int MAX_FPS = 25;
 	//constant time factor for kinematics
-	public static double TIME_SPEED = 0.7;
+	public static final double TIME_SPEED = 0.7;
+
+	/*Display settings and calculations*/
+
+	//display screen size in pixels
+	public static final int diplayWidth = 800;
+	public static final int diplayHeight = 800;
 	
-	//angle of view  (same for both vertically and horizontally)
-	public static int viewAngleHor = 60;
+	//angle of view in degrees (same for both vertically and horizontally)
+	public static final int viewAngleHor = 60;
 	
 	//a single step distance of camera while moving in space
-	public static double stepSize = 0.5;
+	public static final double stepSize = 0.5;
+
+	//virtual distance of screen from camera's position (in pixels)
+	public static final double screenDist = Settings.diplayWidth / (2 * Math.tan(Math.toRadians(Settings.viewAngleHor / 2)));
 
 }

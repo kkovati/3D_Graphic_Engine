@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 
 /**
  * Main window of the application, a container for the Panel
- * Handles all user activity through listeners
+ * Handles all user activity events through listeners, and gives these events back to Engine
  */
 public class Frame extends JFrame implements KeyListener, MouseListener, MouseMotionListener {
 	

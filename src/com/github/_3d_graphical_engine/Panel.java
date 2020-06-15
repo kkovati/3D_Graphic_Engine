@@ -10,7 +10,11 @@ import javax.swing.JPanel;
  * provides Graphics object for the controller and models to
  */
 public class Panel extends JPanel{
-	
+
+	/**
+	 * Displays grid lines, mainly used for debugging
+	 * Background is above grid lines, so grid lines cannot be seen
+	 */
 	public void display() {
 		Graphics g = getGraphics();
 		super.paintComponent(g);
