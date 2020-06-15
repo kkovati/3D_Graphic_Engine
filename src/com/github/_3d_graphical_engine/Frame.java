@@ -50,6 +50,7 @@ public class Frame extends JFrame implements KeyListener, MouseListener, MouseMo
 	
 	public void keyPressed(KeyEvent e) {
 		engine.camMove(e);
+		engine.exit(e);
 	}
 	
 	public void keyTyped(KeyEvent e) {

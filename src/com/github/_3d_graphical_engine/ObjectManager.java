@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 /**
- * Handles, updates and displays all the displayable objects,
+ * Handles, updates and displays all the displayable objects
  */
 public class ObjectManager {
 
@@ -17,22 +17,8 @@ public class ObjectManager {
 
 	private Background background = new Background();
 	
-	//private Line ln;
-	
-	//private Floor fl = new Floor();
-	
 	public ObjectManager() {
-
-		//pa.add(new Point(1000,0,0));
-		//pa.add(new Point(1000,0,-1));
-		
-		//ln = new Line(pa.get(0),pa.get(1));
-		
-		/*Gauss*/
-		/*Random r = new Random();
-		for(int i = 0; i<5; i++) {
-			polyhedrons.add(new Cube(r.nextGaussian(), r.nextGaussian(), r.nextGaussian(), 1));
-		}*/
+		//left empty on purpose
 	}
 
 	public void add(Point p) {
@@ -42,20 +28,26 @@ public class ObjectManager {
 	public void add(Polyhedron p) {
 		polyhedrons.add(p);
 	}
-	
+
+	/**
+	 * Runs update() method of all objects
+	 * @param cam Camera
+	 * @param deltaTime for kinematics
+	 */
 	public void update(Camera cam, double deltaTime) {
 		background.update(cam);
-		//fl.update(cam);
 		polyhedrons.forEach(cube->cube.update(cam, deltaTime));
 		points.forEach(point->point.update(cam));
 		
 	}
-	
+
+	/**
+	 * Runs display() method of all objects
+	 * @param g Graphics
+	 */
 	public void display(Graphics g) {
 		background.display(g);
-		//fl.draw(g);
 		polyhedrons.forEach(cube->cube.display(g));
 		points.forEach(point->point.display(g));
-		//ln.draw(g);
 	}
 }

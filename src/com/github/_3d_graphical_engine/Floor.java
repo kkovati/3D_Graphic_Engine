@@ -4,6 +4,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
+
+/**
+ * Grid below horizon
+ * currently unused in project
+ */
 public class Floor {
 	
 	ArrayList<Point> pa = new ArrayList<Point>();

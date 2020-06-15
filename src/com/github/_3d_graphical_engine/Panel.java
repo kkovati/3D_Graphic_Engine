@@ -11,6 +11,10 @@ import javax.swing.JPanel;
  */
 public class Panel extends JPanel{
 
+	public Panel() {
+		super();
+	}
+
 	/**
 	 * Displays grid lines, mainly used for debugging
 	 * Background is above grid lines, so grid lines cannot be seen

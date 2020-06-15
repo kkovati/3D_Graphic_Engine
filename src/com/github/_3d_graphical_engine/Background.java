@@ -35,7 +35,7 @@ public class Background {
 		//display background above horizon
 		for(int i = 0; i < 250; i++) {
 			g.setColor(new Color(i, i, 220));
-			g.fillRect(0, (int)y - 3 * i, Settings.diplayWidth, 3);
+			g.fillRect(0, (int)y - 6 * i, Settings.diplayWidth, 6);
 		}
 
 		//display background under horizon
@@ -43,7 +43,7 @@ public class Background {
 			double startColor = 50;
 			int color = (int)((((250 - startColor) / 250) * i) + startColor);
 			g.setColor(new Color(color, color, color));
-			g.fillRect(0, (int)(y + 3 * i), Settings.diplayWidth, 3);
+			g.fillRect(0, (int)(y + 6 * i), Settings.diplayWidth, 6);
 		}		
 		
 	}

@@ -3,7 +3,6 @@ package com.github._3d_graphical_engine;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import java.util.Set;
 
 /**
  * The main controller class
@@ -11,20 +10,23 @@ import java.util.Set;
  */
 public class Engine {
 
+    //Application window
     Frame frame = new Frame(this);
 
-
+    //Handles the model of the objects
     private ObjectManager manager = new ObjectManager();
 
     //Camera models the point of view
     private Camera cam = new Camera(0,0,1,0,0);
 
-    //Graphics form Panel
-    private Graphics graphics;
+    //Graphics from Panel
+    private Graphics graphics = frame.getPanelGraphics();
 
-    public Engine()
-    {
-        graphics = frame.getPanelGraphics();
+    public boolean running;
+
+    public Engine() {
+        running = false;
+        //left empty on purpose
     }
 
     public void add(Point p) {
@@ -61,7 +63,10 @@ public class Engine {
         long refreshTimeDisplay = 1000 / Settings.MAX_FPS;
         long startTimeDisplay = System.currentTimeMillis();
 
-        while(true) {
+        //flag overwritten in exit() method
+        running = true;
+
+        while(running) {
 
             if(System.currentTimeMillis() - startTimeUpdate >= refreshTimeUpdate) {
                 long deltaTime = System.currentTimeMillis() - startTimeUpdate;
@@ -74,6 +79,12 @@ public class Engine {
                 frame.display();
                 this.display();
             }
+        }
+    }
+
+    public void exit(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            running = false;
         }
     }
 }
