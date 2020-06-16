@@ -1,5 +1,5 @@
-# 3D Graphical Engine
-A simple 3 dimensional graphical engine written in Java.  
+# 3D Graphic Engine
+A simple 3 dimensional graphic engine written in Java.  
 All the 3D display calculations implemented in the project,
 without any external 3D library.  
 The GUI made with Java Swing, visualized with its graphical drawing tools.

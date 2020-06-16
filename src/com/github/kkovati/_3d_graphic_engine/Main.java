@@ -1,4 +1,4 @@
-package com.github.kkovati._3d_graphical_engine;
+package com.github.kkovati._3d_graphic_engine;
 
 public class Main {
 
@@ -24,7 +24,7 @@ public class Main {
         engine.add(new Octahedron(5, -5, 2, 1));
 
         engine.run();
-        
+
     }
 
 }

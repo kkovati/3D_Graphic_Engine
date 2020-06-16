@@ -1,4 +1,4 @@
-package com.github.kkovati._3d_graphical_engine;
+package com.github.kkovati._3d_graphic_engine;
 
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
