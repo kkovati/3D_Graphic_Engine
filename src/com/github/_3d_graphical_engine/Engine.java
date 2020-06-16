@@ -26,7 +26,6 @@ public class Engine {
 
     public Engine() {
         running = false;
-        //left empty on purpose
     }
 
     public void add(Point p) {
