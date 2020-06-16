@@ -10,7 +10,7 @@ IDE: IntelliJ IDEA 2020.1
 ### Example video
 The following video shows a sample how the engine displays some cubes and 
 octahedrons while the point of view is changing directions 
-and moving around.   
+and moving around. (Poor upload resolution)
 
 https://youtu.be/o-YfCyEvu08
 
