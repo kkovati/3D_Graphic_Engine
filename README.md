@@ -21,21 +21,21 @@ The example code for this:
 ```java
 Engine engine = new Engine();
 
-//tower
+// Tower
 engine.add(new Cube(2,0,1,1));
 engine.add(new Cube(2,0,2,1));
 engine.add(new Cube(2,0,3,1));
 engine.add(new Cube(2,0,4,1));
 
-//cube inside cube
+// Cube inside cube
 engine.add(new Cube(-2,-2,1,1));
 engine.add(new Cube(-2,-2,1,0.5));
 
-//two octahedron top of each other
+// Two octahedron top of each other
 engine.add(new Octahedron(5, 5, 1.2, 1));
 engine.add(new Octahedron(5, 5, 2.3, 0.5));
 
-//single octahedron
+// Single octahedron
 engine.add(new Octahedron(5, -5, 2, 1));
 
 engine.run();
