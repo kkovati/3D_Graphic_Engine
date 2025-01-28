@@ -1,6 +1,6 @@
 # 3D Graphic Engine
 
-![Demo](https://github.com/kkovati/3D_Graphic_Engine/blob/master/docs/3D_Graphic_Engine_sample_13_sec.gif)(https://youtu.be/o-YfCyEvu08)
+[![Demo](https://github.com/kkovati/3D_Graphic_Engine/blob/master/docs/3D_Graphic_Engine_sample_13_sec.gif)(https://youtu.be/o-YfCyEvu08)
 
 A simple 3 dimensional graphic engine written in Java.  
 All the 3D display calculations implemented in the project,
