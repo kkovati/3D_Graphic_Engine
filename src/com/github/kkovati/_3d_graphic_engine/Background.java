@@ -1,4 +1,4 @@
-package com.github.kkovati._3d_graphic_engine;
+package com.github.kkovati.graphic_engine_3d;
 
 import java.awt.Color;
 import java.awt.Graphics;
