@@ -1,11 +1,13 @@
 # 3D Graphic Engine
+
+![Demo](https://github.com/kkovati/3D_Graphic_Engine/blob/master/docs/3D_Graphic_Engine_sample_13_sec.gif)
+
 A simple 3 dimensional graphic engine written in Java.  
 All the 3D display calculations implemented in the project,
 without any external 3D library.  
 The GUI made with Java Swing, visualized with its graphical drawing tools.
 
 Runtime: Java 11  
-IDE: IntelliJ IDEA 2020.1
 
 ### Example video
 The following video shows a sample how the engine displays some cubes and 
