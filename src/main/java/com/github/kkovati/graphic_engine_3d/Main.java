@@ -7,14 +7,14 @@ public class Main {
         Engine engine = new Engine();
 
         // Tower
-        engine.add(new Cube(2,0,1,1));
-        engine.add(new Cube(2,0,2,1));
-        engine.add(new Cube(2,0,3,1));
-        engine.add(new Cube(2,0,4,1));
+        engine.add(new Cube(2, 0, 1, 1));
+        engine.add(new Cube(2, 0, 2, 1));
+        engine.add(new Cube(2, 0, 3, 1));
+        engine.add(new Cube(2, 0, 4, 1));
 
         // Cube inside cube
-        engine.add(new Cube(-2,-2,1,1));
-        engine.add(new Cube(-2,-2,1,0.5));
+        engine.add(new Cube(-2, -2, 1, 1));
+        engine.add(new Cube(-2, -2, 1, 0.5));
 
         // Two octahedron top of each other
         engine.add(new Octahedron(5, 5, 1.2, 1));
