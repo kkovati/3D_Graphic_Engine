@@ -1,5 +1,9 @@
 package com.github.kkovati.graphic_engine_3d;
 
+import com.github.kkovati.graphic_engine_3d.engine.Engine;
+import com.github.kkovati.graphic_engine_3d.objects.Cube;
+import com.github.kkovati.graphic_engine_3d.objects.Octahedron;
+
 public class Main {
 
     public static void main(String[] args) {

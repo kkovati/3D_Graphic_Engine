@@ -1,13 +1,15 @@
-package com.github.kkovati.graphic_engine_3d;
+package com.github.kkovati.graphic_engine_3d.engine;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
+import com.github.kkovati.graphic_engine_3d.objects.Point;
+import com.github.kkovati.graphic_engine_3d.objects.Line;
 
 /**
  * Grid below horizon
- * currently unused in project
+ * NOTE: Currently unused in project
  */
 public class Floor {
 	

@@ -1,8 +1,11 @@
-package com.github.kkovati.graphic_engine_3d;
+package com.github.kkovati.graphic_engine_3d.engine;
 
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+
+import com.github.kkovati.graphic_engine_3d.objects.Point;
+import com.github.kkovati.graphic_engine_3d.objects.Polyhedron;
 
 /**
  * The main controller class

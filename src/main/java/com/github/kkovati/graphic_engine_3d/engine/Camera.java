@@ -1,4 +1,4 @@
-package com.github.kkovati.graphic_engine_3d;
+package com.github.kkovati.graphic_engine_3d.engine;
 
 import java.awt.Graphics;
 import java.awt.Font;
@@ -12,7 +12,7 @@ import java.awt.event.MouseEvent;
 public class Camera {
 
 	//position coordinates in space
-	private double x,y,z;
+	private double x, y, z;
 	//view direction horizontal and vertical angles
 	private double viewDirHor, viewDirVer;
 
@@ -136,16 +136,16 @@ public class Camera {
 		g.setFont(new Font("default", Font.BOLD, 32));
 		switch (lastMove) {
 			case "UP":
-				g.drawString("▲", Settings.diplayWidth / 2, 50);
+				g.drawString("▲", Settings.displayWidth / 2, 50);
 				break;
 			case "DOWN":
-				g.drawString("▼", Settings.diplayWidth / 2, Settings.diplayHeight - 50);
+				g.drawString("▼", Settings.displayWidth / 2, Settings.displayHeight - 50);
 				break;
 			case "LEFT":
-				g.drawString("◄", 50, Settings.diplayHeight / 2);
+				g.drawString("◄", 50, Settings.displayHeight / 2);
 				break;
 			case "RIGHT":
-				g.drawString("►", Settings.diplayWidth - 50, Settings.diplayHeight / 2);
+				g.drawString("►", Settings.displayWidth - 50, Settings.displayHeight / 2);
 				break;
 			default:
 		}

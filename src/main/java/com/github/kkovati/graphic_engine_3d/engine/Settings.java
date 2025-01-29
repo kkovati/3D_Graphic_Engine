@@ -1,4 +1,4 @@
-package com.github.kkovati.graphic_engine_3d;
+package com.github.kkovati.graphic_engine_3d.engine;
 
 public class Settings {
 
@@ -15,8 +15,8 @@ public class Settings {
 	/*Display settings and calculations*/
 
 	//display screen size in pixels (must be same)
-	public static final int diplayWidth = 1000;
-	public static final int diplayHeight = 1000;
+	public static final int displayWidth = 1000;
+	public static final int displayHeight = 1000;
 	
 	//angle of view in degrees (same for both vertically and horizontally)
 	public static final int viewAngleHor = 60;
@@ -25,6 +25,6 @@ public class Settings {
 	public static final double stepSize = 0.5;
 
 	//virtual distance of screen from camera's position (in pixels)
-	public static final double screenDist = Settings.diplayWidth / (2 * Math.tan(Math.toRadians(Settings.viewAngleHor / 2)));
+	public static final double screenDist = Settings.displayWidth / (2 * Math.tan(Math.toRadians(Settings.viewAngleHor / 2.0)));
 
 }

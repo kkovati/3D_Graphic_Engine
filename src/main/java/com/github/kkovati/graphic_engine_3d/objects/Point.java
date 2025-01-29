@@ -1,6 +1,9 @@
-package com.github.kkovati.graphic_engine_3d;
+package com.github.kkovati.graphic_engine_3d.objects;
 
 import java.awt.Graphics;
+
+import com.github.kkovati.graphic_engine_3d.engine.Camera;
+import com.github.kkovati.graphic_engine_3d.engine.Settings;
 
 /**
  * Represents a single point in space
@@ -8,7 +11,7 @@ import java.awt.Graphics;
 public class Point {
 
 	//absolute coordinates
-	private double x0,y0,z0;
+	private double x0, y0, z0;
 	//relative coordinates to camera's position and view direction
 	private double xRel,yRel,zRel;
 	//visibility on display
@@ -73,11 +76,11 @@ public class Point {
 		double y = Settings.screenDist * zRel / xRel;
 		
 		//x and y coordinates on screen (origo at top left)
-		xDisp = -x + Settings.diplayWidth / 2;
-		yDisp = -y + Settings.diplayHeight / 2;
+		xDisp = -x + Settings.displayWidth / 2.0;
+		yDisp = -y + Settings.displayHeight / 2.0;
 
 		//visible field set according to if point is out of screen visibility
-		if(x < Settings.diplayWidth / 2 && x > -Settings.diplayWidth / 2 && y < Settings.diplayHeight / 2 && y > -Settings.diplayHeight / 2 && xRel > 0) {
+		if(x < Settings.displayWidth / 2.0 && x > -Settings.displayWidth / 2.0 && y < Settings.displayHeight / 2.0 && y > -Settings.displayHeight / 2.0 && xRel > 0) {
 			g.fillOval((int)(xDisp - (size / 2)),(int)(yDisp - (int)(size / 2)), (int)size, (int)size );
 			visible = true;
 		} else {
