@@ -2,21 +2,24 @@
 
 [![Demo](https://github.com/kkovati/3D_Graphic_Engine/blob/master/docs/3D_Graphic_Engine_sample_13_sec.gif)](https://youtu.be/o-YfCyEvu08)
 
-A simple 3 dimensional graphic engine written in Java.  
-All the 3D display calculations implemented in the project,
-without any external 3D library.  
-The GUI made with Java Swing, visualized with its graphical drawing tools.
+## 🚀 Overview
+A lightweight 3D graphic engine written in Java, built from scratch without any external 3D libraries.<br>
+The project implements:
+- 3D transformations (translations, rotations, scaling), 
+- perspective projection (converting 3D space to 2D screen coordinates),
+- real-time perspective adjustments (move and rotate the viewpoint dynamically) and
+- rendering pipeline (with basic 3D shape support).
 
-Runtime: Java 11  
+GUI and rendering is done using Java Swing's graphical drawing tools.
 
-### Example video
-The following video shows a sample how the engine displays some cubes and 
-octahedrons while the point of view is changing directions 
-and moving around. (Poor upload resolution)
+## 📽️ Demo
+Check out the engine in action! Watch the [demo video on YouTube](https://youtu.be/o-YfCyEvu08).
 
-https://youtu.be/o-YfCyEvu08
+This video shows how the engine renders some cubes and octahedrons 
+while the viewpoint (camera) changes directions and moves around. (Poor upload resolution)
 
-The example code for this:
+## 💻 Getting Started
+Create and run the 3D scene above with [this sample code](https://github.com/kkovati/3D_Graphic_Engine/blob/master/src/main/java/com/github/kkovati/graphic_engine_3d/Main.java):
 
 ```java
 Engine engine = new Engine();
@@ -40,5 +43,3 @@ engine.add(new Octahedron(5, -5, 2, 1));
 
 engine.run();
 ```
-
-
