@@ -16,7 +16,7 @@ GUI and rendering is done using Java Swing's graphical drawing tools.
 Check out the engine in action! Watch the [demo video on YouTube](https://youtu.be/o-YfCyEvu08).
 
 This video shows how the engine renders some cubes and octahedrons 
-while the viewpoint (camera) changes directions and moves around. (Poor upload resolution)
+while the viewpoint (camera) changes directions and moves around. (Poor upload resolution.)
 
 ## 💻 Getting Started
 Create and run the 3D scene above with [this sample code](https://github.com/kkovati/3D_Graphic_Engine/blob/master/src/main/java/com/github/kkovati/graphic_engine_3d/Main.java):
