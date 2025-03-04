@@ -20,10 +20,10 @@ public class Octahedron implements Polyhedron {
         //load list of vertices
         points.add(new Point(x0 + d, y0, z0));
         points.add(new Point(x0 - d, y0, z0));
-        points.add(new Point(x0,y0 + d, z0));
-        points.add(new Point(x0,y0 - d, z0));
-        points.add(new Point(x0, y0,z0 + d));
-        points.add(new Point(x0, y0,z0 - d));
+        points.add(new Point(x0, y0 + d, z0));
+        points.add(new Point(x0, y0 - d, z0));
+        points.add(new Point(x0, y0, z0 + d));
+        points.add(new Point(x0, y0, z0 - d));
 
         //load list of edges
         lines.add(new Line(points.get(0), points.get(2)));
@@ -41,16 +41,16 @@ public class Octahedron implements Polyhedron {
     }
 
     public void update(Camera cam, double deltaTime) {
-        points.forEach(point->point.update(cam));
+        points.forEach(point -> point.update(cam));
     }
 
     public void display(Graphics g) {
         g.setColor(Color.BLACK);
-        points.forEach(point->point.display(g));
+        points.forEach(point -> point.display(g));
         //line draw must be after point draw
         //but if xDisp would calculated in Point`s update method (currently in display method)
         //the sequence would be irrelevant
-        lines.forEach(line->line.display(g));
+        lines.forEach(line -> line.display(g));
 
     }
 }

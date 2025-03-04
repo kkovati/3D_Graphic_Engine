@@ -20,7 +20,7 @@ public class Engine {
     private ObjectManager manager = new ObjectManager();
 
     //Camera models the point of view
-    private Camera cam = new Camera(0,0,1,0,0);
+    private Camera cam = new Camera(0, 0, 1, 0, 0);
 
     //Graphics from Panel
     private Graphics graphics = frame.getPanelGraphics();
@@ -68,15 +68,15 @@ public class Engine {
         //flag overwritten in exit() method
         running = true;
 
-        while(running) {
+        while (running) {
 
-            if(System.currentTimeMillis() - startTimeUpdate >= refreshTimeUpdate) {
+            if (System.currentTimeMillis() - startTimeUpdate >= refreshTimeUpdate) {
                 long deltaTime = System.currentTimeMillis() - startTimeUpdate;
                 startTimeUpdate = System.currentTimeMillis();
                 this.update(deltaTime * Settings.TIME_SPEED / 1000); //in sec
             }
 
-            if(System.currentTimeMillis() - startTimeDisplay >= refreshTimeDisplay) {
+            if (System.currentTimeMillis() - startTimeDisplay >= refreshTimeDisplay) {
                 startTimeDisplay = System.currentTimeMillis();
                 //frame.display(); //display grid
                 this.display();
@@ -85,7 +85,7 @@ public class Engine {
     }
 
     public void exit(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
             running = false;
         }
     }

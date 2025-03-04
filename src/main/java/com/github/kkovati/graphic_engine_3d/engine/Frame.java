@@ -14,83 +14,83 @@ import javax.swing.JFrame;
  * Handles all user activity events through listeners, and gives these events back to Engine
  */
 public class Frame extends JFrame implements KeyListener, MouseListener, MouseMotionListener {
-	
-	private Panel panel = new Panel();
 
-	private Engine engine;
-	
-	public Frame(Engine engine) {
-		super("3D Graphical Engine");
+    private Panel panel = new Panel();
 
-		this.engine = engine;
-		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//size of app frame is wider than the actual display
-		setSize(Settings.displayWidth + 10, Settings.displayHeight + 32);
-		setLocationRelativeTo(null); //set frame in middle of monitor
-		setVisible(true);
-		setResizable(false);
-		
-		this.addKeyListener(this);
-		this.addMouseListener(this);
-		this.addMouseMotionListener(this);
-		
-		add(panel);
-	}
+    private Engine engine;
 
-	public Graphics getPanelGraphics() {
-		return panel.getGraphics();
-	}
+    public Frame(Engine engine) {
+        super("3D Graphical Engine");
 
-	public void display() {
-		panel.display();
-	}
+        this.engine = engine;
 
-	/*KeyListener interface methods*/
-	
-	public void keyPressed(KeyEvent e) {
-		engine.camMove(e);
-		engine.exit(e);
-	}
-	
-	public void keyTyped(KeyEvent e) {
-		//left empty on purpose
-	}
-	
-	public void keyReleased(KeyEvent e) {
-		//left empty on purpose
-	}
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //size of app frame is wider than the actual display
+        setSize(Settings.displayWidth + 10, Settings.displayHeight + 32);
+        setLocationRelativeTo(null); //set frame in middle of monitor
+        setVisible(true);
+        setResizable(false);
 
-	/*MouseMotionListener interface methods*/
-	
-	public void mouseMoved(MouseEvent e) {
-		//left empty on purpose
-	}
-	
-	public void mouseDragged(MouseEvent e) {
-		engine.camRotate(e);
-	}
+        this.addKeyListener(this);
+        this.addMouseListener(this);
+        this.addMouseMotionListener(this);
 
-	/*MouseListener interface methods*/
-	
-	public void mouseEntered(MouseEvent e) {
-		//left empty on purpose
-	}
-	
-	public void mouseExited(MouseEvent e) {
-		//left empty on purpose
-	}
-	
-	public void mousePressed(MouseEvent e) {
-		//left empty on purpose
-	}
-	
-	public void mouseReleased(MouseEvent e) {
-		//left empty on purpose
-	}
+        add(panel);
+    }
 
-	public void mouseClicked(MouseEvent e) {
-		//left empty on purpose
-	}
+    public Graphics getPanelGraphics() {
+        return panel.getGraphics();
+    }
+
+    public void display() {
+        panel.display();
+    }
+
+    /*KeyListener interface methods*/
+
+    public void keyPressed(KeyEvent e) {
+        engine.camMove(e);
+        engine.exit(e);
+    }
+
+    public void keyTyped(KeyEvent e) {
+        //left empty on purpose
+    }
+
+    public void keyReleased(KeyEvent e) {
+        //left empty on purpose
+    }
+
+    /*MouseMotionListener interface methods*/
+
+    public void mouseMoved(MouseEvent e) {
+        //left empty on purpose
+    }
+
+    public void mouseDragged(MouseEvent e) {
+        engine.camRotate(e);
+    }
+
+    /*MouseListener interface methods*/
+
+    public void mouseEntered(MouseEvent e) {
+        //left empty on purpose
+    }
+
+    public void mouseExited(MouseEvent e) {
+        //left empty on purpose
+    }
+
+    public void mousePressed(MouseEvent e) {
+        //left empty on purpose
+    }
+
+    public void mouseReleased(MouseEvent e) {
+        //left empty on purpose
+    }
+
+    public void mouseClicked(MouseEvent e) {
+        //left empty on purpose
+    }
 
 }
